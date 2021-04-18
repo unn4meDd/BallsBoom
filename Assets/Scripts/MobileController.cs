@@ -47,7 +47,7 @@ public class MobileController : MonoBehaviour, IDragHandler, IPointerUpHandler, 
         }
         else
         {
-            return Input.GetAxis("Horizontal");
+            return Input.GetAxis("Vertical");
         }
     }
     public float Vertical()
@@ -58,8 +58,7 @@ public class MobileController : MonoBehaviour, IDragHandler, IPointerUpHandler, 
         }
         else
         {
-            return Input.GetAxis("Vertical");
+            return Input.GetAxis("Horizontal");
         }
     }
-
 }

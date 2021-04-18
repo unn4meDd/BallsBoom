@@ -1,51 +1,41 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
     public float speedMove = 10;
-    private float gravityForce;
-    private Vector3 moveVector;
-
-    private CharacterController characterController;
+    private Rigidbody rigidBody;
     private MobileController mobileController;
-    public bool isGrounded;
+    float gravityForce;
 
     // Start is called before the first frame update
     void Start()
     {
-        Rigidbody rigidbody = GetComponent<Rigidbody>();
-        characterController = GetComponent<CharacterController>();
+    	rigidBody = GetComponent<Rigidbody>();
         mobileController = GameObject.FindGameObjectWithTag("Joystick").GetComponent<MobileController>();
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        CharacterMove();
+        Move();
         GamingGravity();
     }
 
-    void CharacterMove()
+    void Move()
     {
-        moveVector = Vector3.zero;
-        moveVector.x = mobileController.Horizontal() * speedMove;
-        moveVector.z = mobileController.Vertical() * speedMove;
-
-        moveVector.y = gravityForce;
-        characterController.Move(moveVector * Time.deltaTime);
+        float moveVertical = mobileController.Vertical();
+        float moveHorizontal = mobileController.Horizontal();
+        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
+        rigidBody.AddForce(movement * speedMove);
     }
-
-    public void GamingGravity()
+    void GamingGravity()
     {
-        if (!characterController.isGrounded)
+        if(gameObject.transform.position.y <= -3)
         {
-            gravityForce -= 20f * Time.deltaTime;
-        }
-        else
-        {
-            gravityForce = -1f;
+            SceneManager.LoadScene("Game");
         }
     }
 }

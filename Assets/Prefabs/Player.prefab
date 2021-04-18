@@ -71,9 +71,7 @@ GameObject:
   - component: {fileID: 4406618219884311149}
   - component: {fileID: 4406618219884311150}
   - component: {fileID: 4406618219884311151}
-  - component: {fileID: 4406618219884311155}
   - component: {fileID: 4406618219884311148}
-  - component: {fileID: 1359211868}
   - component: {fileID: 1359211867}
   m_Layer: 0
   m_Name: Player
@@ -145,22 +143,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!54 &4406618219884311155
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4406618219884311145}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!114 &4406618219884311148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,25 +156,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedMove: 5
-  isGrounded: 0
---- !u!143 &1359211868
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4406618219884311145}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Height: 1
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!96 &1359211867
 TrailRenderer:
   serializedVersion: 2
