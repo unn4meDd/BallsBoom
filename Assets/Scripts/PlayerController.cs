@@ -6,9 +6,9 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float speedMove = 10;
+    private Vector3 moveVector;
     private Rigidbody rigidBody;
     private MobileController mobileController;
-    float gravityForce;
 
     // Start is called before the first frame update
     void Start()
@@ -21,17 +21,18 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         Move();
-        GamingGravity();
+        Lose();
     }
 
     void Move()
     {
-        float moveVertical = mobileController.Vertical();
-        float moveHorizontal = mobileController.Horizontal();
-        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
+        moveVector = Vector3.zero;
+        moveVector.x = mobileController.Horizontal();
+        moveVector.z = mobileController.Vertical();
+        Vector3 movement = new Vector3(moveVector.x, 0.0f, moveVector.z);
         rigidBody.AddForce(movement * speedMove);
     }
-    void GamingGravity()
+    void Lose()
     {
         if(gameObject.transform.position.y <= -3)
         {

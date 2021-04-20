@@ -15,10 +15,10 @@ public class Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (sphere.transform.position.y <= -3f)
+        if (sphere.transform.position.y <= -3)
         {
             Destroy(sphere);
-            Invoke("InstantiateSphere()", 5f);
+            InstantiateSphere();
         }
     }
     void InstantiateSphere()
