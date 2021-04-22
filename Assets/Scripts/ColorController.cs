@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class URLController : MonoBehaviour
+public class ColorController : MonoBehaviour
 {
-    string channelURL = "https://www.youtube.com/channel/UCqWiwMpbw0zfSXmJlHpjaYA";
+    public MeshRenderer[] renderers;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,9 +15,5 @@ public class URLController : MonoBehaviour
     void Update()
     {
         
-    }
-    public void Subscribe()
-    {
-        Application.OpenURL(channelURL);
     }
 }
