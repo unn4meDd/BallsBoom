@@ -6,8 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
 {
-    string youtube = "https://www.youtube.com/channel/UCw732c8mKwIU-tsgF5WacUw";
-    string discord = "https://discord.gg/Q2VdNKyN";
     public GameObject mainMenu;
     public GameObject gameMenu;
     public GameObject locker;
@@ -53,16 +51,6 @@ public class SceneController : MonoBehaviour
     {
         SceneManager.LoadScene("Menu");
     }
-    public void YouTube()
-    {
-        Application.OpenURL(youtube);
-    }
-
-    public void Discord()
-    {
-        Application.OpenURL(discord);
-    }
-        
     public void Play()
     {
         SceneManager.LoadScene("Game");
